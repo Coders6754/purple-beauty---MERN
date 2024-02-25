@@ -45,5 +45,20 @@ app.get("/", async (req, res) => {
       // console.log(err);
     }
   });
+
+  // particluar product
+
+app.get("/productId/:id", async (req, res) => {
+    const { id } = req.params;
+    // console.log(query, "t");
   
+    try {
+      let data = await ProdModel.findOne({ _id: id });
+      return res.send({ messg: data, state: "OK" });
+    } catch (e) {
+      return res.send({ messg: e.message, state: "NOT" });
+      // console.log(err);
+    }
+  });
+
 module.exports = app;
