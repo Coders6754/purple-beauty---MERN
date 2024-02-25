@@ -6,8 +6,17 @@ const UserSchema = new Schema(
         email: { type: String, required: true, unquie: true },
         password: { type: String, required: true },
         address: { type: String },
-        phone: Number
+        phone: Number,
+        role: {
+            type: String,
+            enum: ["User", "Employee", "Admin"],
+            default: "User",
+        },
+        age: String,
+        Gender: String,
+        BlockedTime: Number
     },
+    { versionKey: false, timestamps: true }
 );
 
 const UserModel = model("user", UserSchema);
