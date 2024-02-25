@@ -188,5 +188,193 @@ const Payment = () => {
             mb="10px"
             ml="3"
           >
+            <option value="option1"> Bank of Baroda</option>
+            <option value="option2">Bank of India</option>
+            <option value="option3">Bank of Maharashtra</option>
+            <option value="option3">Canara Bank</option>
+            <option value="option3">Central Bank of India</option>
+            <option value="option3">Indian Bank</option>
+            <option value="option3">Indian Overseas Bank</option>
+            <option value="option3">Punjab & Sind Bank</option>
+            <option value="option3">Punjab National Bank</option>
+            <option value="option3">State Bank of India</option>
+            <option value="option3">UCO Bank</option>
+            <option value="option3">Union Bank of India</option>
+          </Select>
+          {/* <Button bg={'#e40980'} width='40%' borderRadius='0px' _hover={{ bg: '#e40980' }} color='white' mb={5} ml='3' w='28%'>
+                        PAY ₹{total}
+                    </Button> */}
+        </Box>
+        <Box className="creditcard-container">
+          <Box className="Creditecard">Wallets</Box>
+          <Box ml="10px">
+            <RadioGroup>
+              <Stack direction="column">
+                <Radio value="1">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://download.logo.wine/logo/Paytm/Paytm-Logo.wine.png"
+                      alt="Paytm"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      Paytm Wallet
+                    </Text>
+                  </Box>
+                </Radio>
+                <Radio value="2">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ih1e58Hb14wPsHUbWoVYF-4jznxuDzDd9Q&usqp=CAU"
+                      alt="Ola money"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      OlaMoney Postpaid + Wallet
+                    </Text>
+                  </Box>
+                </Radio>
+                <Radio value="3">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Y2bFIK3LjcUwBJylqP5mgPOL-vnkRwk3Sg&usqp=CAU"
+                      alt="Paytm"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      Mobikwik
+                    </Text>
+                  </Box>
+                </Radio>
+              </Stack>
+            </RadioGroup>
+          </Box>
+          {/* <Button bg={'#e40980'} width='40%' borderRadius='0px' _hover={{ bg: '#e40980' }} color='white' mb={5} ml='3' w='28%' mt='10px'>
+                        PAY ₹{total}
+                    </Button> */}
+        </Box>
+        <Box className="creditcard-container">
+          <Box className="Creditecard">Wallets</Box>
+          <Box ml="10px">
+            <RadioGroup mt="10px" mb="10px">
+              <Stack direction="column">
+                <Radio value="1">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://play-lh.googleusercontent.com/B5cNBA15IxjCT-8UTXEWgiPcGkJ1C07iHKwm2Hbs8xR3PnJvZ0swTag3abdC_Fj5OfnP"
+                      alt="Paytm"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      upi
+                    </Text>
+                  </Box>
+                </Radio>
+                <Radio value="2">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://images.hindustantimes.com/tech/img/2020/11/05/1600x900/image_-_2020-11-05T095740.083_1604550459365_1604550465218_1604550598928.jpg"
+                      alt="Gpay"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      Google Pay
+                    </Text>
+                  </Box>
+                </Radio>
+                <Radio value="3">
+                  <Box display={"flex"} alignItems="center">
+                    <Image
+                      className="wallet-logo"
+                      src="https://image01.realme.net/general/20190821/1566357380566.jpg"
+                      alt="Paytm"
+                    />
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      Mobikwik
+                    </Text>
+                  </Box>
+                </Radio>
+              </Stack>
+            </RadioGroup>
+          </Box>
+        </Box>
+        <Box className="creditcard-container">
+          <Box className="Creditecard">Wallets</Box>
+          <Box ml="10px">
+            <RadioGroup mt="10px" mb="10px">
+              <Stack direction="column">
+                <Radio value="1">
+                  <Box display={"flex"} alignItems="center">
+                    <Text fontSize={"16px"} fontWeight="500" color={"black"}>
+                      Pay on Delivery
+                    </Text>
+                  </Box>
+                </Radio>
+              </Stack>
+            </RadioGroup>
+          </Box>
+        </Box>
+      </Box>
 
-            
+      <Box className="payment-right-container">
+        <Box className="cartDetails">
+          <Box className="safepayment">
+            <Text>Need Help? 86555 00222</Text>
+          </Box>
+        </Box>
+        <Divider width="100%" margin="auto" />
+        <Text fontSize={"16px"} fontWeight="500" color={"green.500"}>
+          Product will be deliverd on {Number(day) + 3} {month}
+        </Text>
+        <Divider width="100%" margin="auto" />
+        <Box className="pricedivcontainer">
+          <Box className="pricesubdiv">
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>Total MRP:</Text>
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>₹{total}</Text>
+          </Box>
+          <Box className="pricesubdiv">
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>
+              Saving on MRP:
+            </Text>
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>
+              ₹{total * (10 / 100)}
+            </Text>
+          </Box>
+          <Box className="pricesubdiv">
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>Subtotal:</Text>
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>
+              ₹{total - total * (10 / 100)}
+            </Text>
+          </Box>
+          <Box className="pricesubdiv">
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>
+              Shipping Charges:
+            </Text>
+            <Text fontSize={["14px", "14px", "16px", "16px"]}>Free</Text>
+          </Box>
+          <Divider
+            width="100%"
+            margin="auto"
+            marginTop="10px"
+            border="1px solid gray"
+          />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            fontWeight="700"
+            marginTop="10px"
+          >
+            <Text fontSize="18px" color="black">
+              Order Total
+            </Text>
+            <Text fontSize="18px" color="black">
+              ₹{total - total * (10 / 100)}
+            </Text>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export default Payment;
