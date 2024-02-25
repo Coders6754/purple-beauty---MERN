@@ -22,7 +22,3 @@ const OrderSchema = new Schema(
     { versionKey: false, timestamps: true }
   );
 
-
-const OrderModel = model("order", OrderSchema);
-
-module.exports = OrderModel;
