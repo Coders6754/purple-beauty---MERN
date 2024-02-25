@@ -31,4 +31,19 @@ app.get("/", async (req, res) => {
     }
   });
 
+  app.get("/search", async (req, res) => {
+    const { query } = req.query;
+    // console.log(query, "t");
+  
+    try {
+      let data = await ProdModel.find({
+        name: { $regex: query, $options: "si" },
+      });
+      return res.send({ messg: data, state: "OK" });
+    } catch (e) {
+      return res.send({ messg: e.message, state: "NOT" });
+      // console.log(err);
+    }
+  });
+  
 module.exports = app;
