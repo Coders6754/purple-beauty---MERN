@@ -18,5 +18,19 @@ app.get("/getall", validate, async (req, res) => {
     }
   });
 
+  // Get all the order  list  of delivered item *************
+app.get("/getdeliveredorder", async (req, res) => {
+    let { token } = req.headers;
+    try {
+      let delivered = await OrderModel.find({ OrderDelivered: true }).populate({
+        path: "cartId",
+        populate: { path: "products", populate: "productId" },
+      });
+      return res.status(201).send({ delivered, Message: "OK" });
+    } catch (e) {
+      return res.send("Some thing went wrong");
+    }
+  });
+
 
 module.exports = app;
