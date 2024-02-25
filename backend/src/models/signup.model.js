@@ -10,5 +10,11 @@ SignupRoute.post("/", async (req, res) => {
     if (email == "" && password == "") {
         return res.json({ status: "NO", message: "Please Fill Credentials" });
     }
+    if (user) {
+        return res.json({
+            status: "NO",
+            message: "User Already Exists, Please Signup with Different Credentials",
+        });
+    } 
 });
 module.exports = SignupRoute;
