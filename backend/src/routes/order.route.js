@@ -33,4 +33,20 @@ app.get("/getdeliveredorder", async (req, res) => {
   });
 
 
+  // Get list of Order Which is Not delivered
+app.get("/getnotdelivered", async (req, res) => {
+    let { token } = req.headers;
+    try {
+      let notDelivered = await OrderModel.find({
+        OrderDelivered: false,
+      }).populate({
+        path: "cartId",
+        populate: { path: "products", populate: "productId" },
+      });
+      return res.status(201).send({ notDelivered, Message: "OK" });
+    } catch (e) {
+      return res.send("Some thing went wrong");
+    }
+  });
+
 module.exports = app;
