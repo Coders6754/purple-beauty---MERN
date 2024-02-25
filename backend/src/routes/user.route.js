@@ -49,6 +49,19 @@ app.get("/", async (req, res) => {
 });
 
 
+// ************Update the user from list****************
+app.patch("/update/:id", async (req, res) => {
+    const { id } = req.params;
+    const data = req.body;
+    try {
+        await UserModel.findByIdAndUpdate({ _id: id }, data);
+        res.status(200).send({ "msg": `Updated Successfully User` });
+    } catch (err) {
+        res.status(404).send({ "Error": err.message });
+    }
+});
+
+// ************Remove the user from list****************
 
 
 module.exports = app;
