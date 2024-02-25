@@ -63,5 +63,14 @@ app.patch("/update/:id", async (req, res) => {
 
 // ************Remove the user from list****************
 
+app.delete("/delete/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        await UserModel.findByIdAndDelete({ _id: id });
+        return res.status(200).send({ "msg": "Delete Successfully User" });
+    } catch (e) {
+        res.status(404).send({ "Error": err.message });
+    }
+});
 
 module.exports = app;
