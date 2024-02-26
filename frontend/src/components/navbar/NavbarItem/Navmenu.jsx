@@ -12,11 +12,10 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiFillHome } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import Shop from "../NavItem/Shop";
 import { useDispatch } from "react-redux";
 import { GetToQueryProduct } from "../../../redux/prod/prod.action";
 
