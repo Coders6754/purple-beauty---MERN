@@ -5,10 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./Utilis/Auth";
+import { AuthProvider } from "./Utils/Auth";
 import { store } from "./store";
 import { Provider } from "react-redux";
-import ThemeContextProvider from './Utilis/ThemeContext/ThemeContext';
+import ThemeContextProvider from './Utils/ThemeContext/ThemeContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

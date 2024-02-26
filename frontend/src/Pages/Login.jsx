@@ -15,7 +15,7 @@ import {
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../Utilis/Auth";
+import { useAuth } from "../Utils/Auth";
 import BackendURL from "../BackendURL";
 
 export default function Login() {

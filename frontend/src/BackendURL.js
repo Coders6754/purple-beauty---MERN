@@ -1,2 +1,2 @@
-const BackendURL = "https://blushing-underwear-newt.cyclic.app"
+const BackendURL = "https://purple-beauty-mern.vercel.app/"
 export default BackendURL;

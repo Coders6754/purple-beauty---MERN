@@ -12,7 +12,7 @@ import { Icon } from "@chakra-ui/react";
 import { FaMobileAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ReactSwitch from "react-switch";
-import { ThemeContext } from "../Utilis/ThemeContext/ThemeContext";
+import { ThemeContext } from "../Utils/ThemeContext/ThemeContext";
 
 
 const Header = () => {

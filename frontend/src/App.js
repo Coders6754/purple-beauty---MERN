@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox";
 import { useContext, useLayoutEffect, useState } from "react";
 import { Box } from "@chakra-ui/react";
 import AsFooter from "./components/Home/AsFooter";
-import { ThemeContext } from "./Utilis/ThemeContext/ThemeContext";
+import { ThemeContext } from "./Utils/ThemeContext/ThemeContext";
 import './App.css';
 
 

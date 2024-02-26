@@ -32,7 +32,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
-import { AuthContext } from "../Utilis/Auth";
+import { AuthContext } from "../Utils/Auth";
 
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
