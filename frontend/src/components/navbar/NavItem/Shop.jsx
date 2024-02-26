@@ -9,25 +9,65 @@ import {
   PopoverHeader,
   PopoverTrigger,
   SimpleGrid,
-  Text,
+  // Text,
 } from "@chakra-ui/react";
-
-const Brand = () => {
+import { useSelector, useDispatch } from "react-redux";
+import {
+  GetToProduct,
+  GetToQueryProduct,
+} from "../../../redux/prod/prod.action";
+import { useNavigate } from "react-router-dom";
+const Shop = () => {
   let [catogoryKey, setcatogoryKey] = useState();
   let [catogoryTypes, setCatogoryTypes] = useState({
-    "FACE MAKEUP": ["Primer", "Foundation", "Compact", "Blush"],
-    "LIP MAKEUP": ["Lipstick", "Lip Liner", "Lip Gloss"],
+    "FACE MAKEUP": [
+      "Cream",
+      "Powder",
+      "Foundation",
+      "bb_cc",
+      "Contour",
+      "Bronzer",
+      "Concealer",
+      "Blush",
+    ],
+    "LIP MAKEUP": ["Lipstick", "Liquid", "Lip Liner", "Lip Gloss"],
   });
-  const toggleSearch = () => {};
+
+  const Navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { prod } = useSelector((store) => store);
+  // console.log(prod);
+
+  const toggleSearch = (query) => {
+    if (query === "total") {
+      dispatch(GetToProduct(query));
+      Navigate("/productmain");
+      return;
+    }
+    dispatch(GetToQueryProduct(query));
+    Navigate("/productmain", { state: { q: "N", query } });
+    // console.log(query);
+  };
   let shop = {
     Makeup: {
-      "FACE MAKEUP": ["Primer", "Foundation", "Compact", "Blush"],
-      "LIP MAKEUP": ["Lipstick", "Lip Liner", "Lip Gloss"],
+      "FACE MAKEUP": [
+        "Cream",
+        "bb_cc",
+        "Powder",
+        "Foundation",
+        "Concealer",
+        "Bronzer",
+        "Contour",
+        "Blush",
+        "Highlighter",
+      ],
+      Nails: ["nail_polish", "gel"],
+      "LIP MAKEUP": ["Lipstick", "Liquid", "Lip Liner", "Lip Gloss"],
     },
 
     "Skin Care": {
       CLEANERS: ["Face Wash", "Cleaner"],
-      "EYE CARE": ["Eye Serum", "Eye Cream"],
+      "EYE CARE": ["Pencil", "Palette", "Eye Liner", "Eye Shadow"],
     },
 
     "Hair care": {
@@ -76,13 +116,14 @@ const Brand = () => {
 
   useEffect(() => {
     setshopFucntion();
+    // toggleSearch();
   }, []);
 
   return (
     <Popover trigger="hover">
       <PopoverTrigger>
         <Box className={"blackHover"} p="7px" fontWeight={630}>
-          BRANDS{" "}
+          SHOP CATOGORIES{" "}
         </Box>
       </PopoverTrigger>
       <PopoverContent w="100vw">
@@ -101,6 +142,7 @@ const Brand = () => {
                     onMouseOver={() => {
                       setCatogoryTypes(shop[e]);
                     }}
+                    onClick={() => toggleSearch("total")}
                   >
                     {e}
                   </Box>
@@ -119,7 +161,11 @@ const Brand = () => {
                     <Box fontWeight="500">{keyName}</Box>
                     {catogoryTypes[keyName] &&
                       catogoryTypes[keyName].map((el, i) => {
-                        return <Box key={i}>{el}</Box>;
+                        return (
+                          <Box key={i} onClick={() => toggleSearch(el)}>
+                            {el}
+                          </Box>
+                        );
                       })}
                   </Box>
                 );
@@ -131,4 +177,4 @@ const Brand = () => {
   );
 };
 
-export default Brand;
+export default Shop;

@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const Brand = () => {
+const Splurge = () => {
   let [catogoryKey, setcatogoryKey] = useState();
   let [catogoryTypes, setCatogoryTypes] = useState({
     "FACE MAKEUP": ["Primer", "Foundation", "Compact", "Blush"],
@@ -81,8 +81,8 @@ const Brand = () => {
   return (
     <Popover trigger="hover">
       <PopoverTrigger>
-        <Box className={"blackHover"} p="7px" fontWeight={630}>
-          BRANDS{" "}
+        <Box className={"blackHover"} fontWeight={630} p="7px">
+          SPLURGE{" "}
         </Box>
       </PopoverTrigger>
       <PopoverContent w="100vw">
@@ -94,8 +94,8 @@ const Brand = () => {
               {catogoryKey &&
                 catogoryKey.map((e, i) => (
                   <Box
-                    key={i}
                     fontWeight="600"
+                    key={i}
                     className={"greyHover"}
                     p="10px"
                     onMouseOver={() => {
@@ -131,4 +131,4 @@ const Brand = () => {
   );
 };
 
-export default Brand;
+export default Splurge;

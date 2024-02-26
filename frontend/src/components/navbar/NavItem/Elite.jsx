@@ -11,8 +11,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-
-const Brand = () => {
+const Elite = () => {
   let [catogoryKey, setcatogoryKey] = useState();
   let [catogoryTypes, setCatogoryTypes] = useState({
     "FACE MAKEUP": ["Primer", "Foundation", "Compact", "Blush"],
@@ -82,7 +81,7 @@ const Brand = () => {
     <Popover trigger="hover">
       <PopoverTrigger>
         <Box className={"blackHover"} p="7px" fontWeight={630}>
-          BRANDS{" "}
+          ELITE OFFERS{" "}
         </Box>
       </PopoverTrigger>
       <PopoverContent w="100vw">
@@ -94,8 +93,8 @@ const Brand = () => {
               {catogoryKey &&
                 catogoryKey.map((e, i) => (
                   <Box
-                    key={i}
                     fontWeight="600"
+                    key={i}
                     className={"greyHover"}
                     p="10px"
                     onMouseOver={() => {
@@ -131,4 +130,4 @@ const Brand = () => {
   );
 };
 
-export default Brand;
+export default Elite;
